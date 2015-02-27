@@ -5,13 +5,13 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 @Stateless
-public class NewSessionBeanRemote implements NewSessionBeanRemoteRemote {
+public class ContactsSessionBean implements ContactsSessionBeanRemote {
 
     @EJB
     private ContactsFacadeLocal contactsFacade;
 
     @Override
-    public String businessMethod() {
+    public String getAllContacts() {
         List<Contacts> all = contactsFacade.findAll();
         return all.toString();
     }
